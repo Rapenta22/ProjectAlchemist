@@ -1,4 +1,3 @@
-using FunkyCode.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +8,6 @@ public class GManager : MonoBehaviour
     /// 유저 게임 오브젝트
     /// </summary>
     GameObject m_userObj = null;
-
-    public InventoryUI InventoryUI { get; private set; }
-
-    [SerializeField] InventoryManager m_invenManager = null;
 
     /// <summary>
     /// 세팅 플래그
@@ -51,20 +46,20 @@ public class GManager : MonoBehaviour
         m_userObj = argUserObj;
         IsSettingFlag = true;
     }
-    /// <summary>
-    /// 유저 컨트롤러
-    /// </summary>
-    public UserController IsUserController { get; private set; } = null;
-
-
-
 
     /// <summary>
-    /// 유저 트렌스폼
+    /// 유저 트랜스폼 반환 (null 체크 추가)
     /// </summary>
     public Transform IsUserTrans
     {
-        get { return m_userObj != null ? m_userObj.transform : null; }
+        get
+        {
+            if (m_userObj == null)
+            {
+                return null;
+            }
+            return m_userObj.transform;
+        }
     }
 
     private void Start()
@@ -77,13 +72,5 @@ public class GManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 세이브/로드 매니저
-    /// </summary>
-    public InventoryManager IsinvenManager { get { return m_invenManager; } }
 
-    public void SetInventoryUI(InventoryUI ui)
-    {
-        InventoryUI = ui;
-    }
 }

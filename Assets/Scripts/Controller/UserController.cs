@@ -10,7 +10,6 @@ public class UserController : ParentController
     private int wallLayer; // 벽 레이어 저장
     private float lastMoveX = 1f; // 처음에는 왼쪽 보는 걸로 가정
     [SerializeField] private Animator animator;
-    bool m_InvenFlag = false;
 
 
     private void Start()
@@ -23,13 +22,15 @@ public class UserController : ParentController
         m_rb.freezeRotation = true;
         m_rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
-    public override void Move()
+
+    private void Update()
     {
         // 입력값 가져오기
         m_input.x = Input.GetAxisRaw("Horizontal");
         m_input.y = Input.GetAxisRaw("Vertical");
         m_input = m_input.normalized; // 대각선 이동 속도 보정
-        
+
+
         bool isMove = m_input.magnitude > 0.1f;
         animator.SetBool("isMove", isMove);
 
@@ -40,10 +41,10 @@ public class UserController : ParentController
             {
                 lastMoveX = m_input.x > 0 ? 1f : -1f;
             }
-
-            // 이동 중이든 아니든 현재 방향 반영 (중요!)
-            animator.SetFloat("moveX", lastMoveX);
         }
+
+        // 이동 중이든 아니든 현재 방향 반영 (중요!)
+        animator.SetFloat("moveX", lastMoveX);
     }
 
     private void FixedUpdate()
@@ -64,33 +65,6 @@ public class UserController : ParentController
         else
         {
             Debug.Log("벽이 아닌 다른 오브젝트와 충돌했습니다.");
-        }
-    }
-
-    /// <summary>
-    /// 아이템 윈도우 관련
-    /// </summary>
-    void ItemView()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            InventoryOpenClose();
-        }
-    }
-    /// <summary>
-    /// 아이템박스 열고 닫기
-    /// </summary>
-    public void InventoryOpenClose()
-    {
-        m_InvenFlag = !m_InvenFlag;
-        switch (m_InvenFlag)
-        {
-            case true:
-                //GManager.Instance.m_InvenFlag.OpenWindow(m_saveData);
-                break;
-            case false:
-                //GManager.Instance.m_InvenFlag.CloseWindow();
-                break;
         }
     }
 }

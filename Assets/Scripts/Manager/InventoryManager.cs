@@ -1,27 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager Instance { get; private set; }
-    public InventoryData inventoryData { get; private set; }
-    [SerializeField] private int inventorySize = 24;
+    /// <summary>
+    /// 획득 가능한 아이템 데이터 리스트
+    /// </summary>
+    [SerializeField] List <ItemData> m_dataList = null;
 
-    private void Awake()
+    public void UpdateInven(int argIndex)
     {
-        inventoryData = new InventoryData(inventorySize);
+        // .TO do : 인덱스 받아온 걸로 인벤에 넣기 
     }
-
-    public void AddItem(ItemData item, int amount = 1)
-    {
-        inventoryData.AddItem(item, amount);
-        GManager.Instance.InventoryUI.UpdateUI(); // 추가
-    }
-
-    public void RemoveItem(ItemData item, int amount = 1)
-    {
-        inventoryData.RemoveItem(item, amount);
-        GManager.Instance.InventoryUI.UpdateUI(); // 추가
-    }
-
-}
-
+} 

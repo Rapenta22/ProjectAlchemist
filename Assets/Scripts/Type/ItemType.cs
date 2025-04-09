@@ -7,7 +7,7 @@ public enum ItemType
 {
         Material,
         Crafted,
-        Potion,
+        Portion,
         Quest,
         Tools,
         Upgrade_Res
