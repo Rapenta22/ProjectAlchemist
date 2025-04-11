@@ -5,22 +5,10 @@ using UnityEngine;
 public class ParentController : MonoBehaviour
 {
     public bool IsMoveFlag { get; set; } = false;
-
     /// <summary>
-    /// 오브젝트 사용 플래그
+    /// 캐릭터 데이터
     /// </summary>
-    bool IsActiveFlag = false;
-
-    /// <summary>
-    /// 대화 플래그
-    /// </summary>
-    bool IsTalkFlag = false;
-
-    /// <summary>
-    /// 액션 플래그
-    /// </summary>
-    bool IsActionFlag = false;
-
+    public UserData IsData { get; private set; }
     /// <summary>
     /// 애니메이터
     /// </summary>

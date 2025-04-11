@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public enum GradeType
+public class GradeType
 {
-    Novice,
-    Expert,
-    Master,
-    GrandMaster
+    public enum Type
+    {
+        Novice,
+        Expert,
+        Master,
+    }
 }
+

@@ -13,7 +13,9 @@ public class UserData : ScriptableObject
     /// <summary>
     /// 연금술사 등급
     /// </summary>
-    public GradeType m_grade;
+    [SerializeField] GradeType.Type m_grade = GradeType.Type.Novice;
+
+    public GradeType.Type IsGrade { get { return m_grade; } }
 
 
 }

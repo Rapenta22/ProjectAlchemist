@@ -1,16 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    /// <summary>
-    /// 획득 가능한 아이템 데이터 리스트
-    /// </summary>
-    [SerializeField] List <ItemData> m_dataList = null;
+    public static InventoryManager Instance { get; private set; }
+    [SerializeField] private InventoryData InventoryData;
+    public InventoryData IsInventoryData => InventoryData; // 읽기 전용 속성으로 외부 접근 허용
+    
+    [SerializeField] private int inventorySize = 24;
 
-    public void UpdateInven(int argIndex)
+    private void Awake()
     {
-        // .TO do : 인덱스 받아온 걸로 인벤에 넣기 
+        if (InventoryData == null || InventoryData.slots == null || InventoryData.slots.Length != inventorySize)
+        {
+            InventoryData = new InventoryData(inventorySize);
+        }
     }
-} 
+
+    public void AddItem(ItemData item, int amount = 1)
+    {
+        InventoryData.AddItem(item, amount);
+        GManager.Instance.InventoryUI.UpdateUI(); // 추가
+    }
+
+    public void RemoveItem(ItemData item, int amount = 1)
+    {
+        InventoryData.RemoveItem(item, amount);
+        GManager.Instance.InventoryUI.UpdateUI(); // 추가
+    }
+
+    public void CheckInvenItem(ItemData item, int amount)
+    {
+        if (!InventoryData.HasItem(item, amount))
+        {
+            return;
+        }
+
+    }
+    public void CheckInvenSpace(ItemData item, int amount)
+    {
+        if (!InventoryData.HasSpaceForItem(item, amount))
+        {
+            Debug.LogWarning("[인벤토리 공간 부족] 아이템을 추가할 수 없습니다.");
+            return;
+        }
+    }
+    public void ConsumeItem(ItemData item, int amount)
+    {
+        CheckInvenItem(item, amount); // 소모 전에 반드시 확인
+        InventoryData.RemoveItem(item, amount);
+        GManager.Instance.InventoryUI.UpdateUI();
+    }
+
+
+}
+

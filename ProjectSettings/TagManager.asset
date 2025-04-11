@@ -8,13 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ResObjs
+  - 
   - Water
   - UI
-  - ActionObjs
+  - Test
   - Wall
-  - Player
-  - NoticeText
   - 
   - 
   - 
@@ -27,7 +25,9 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -41,9 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Test
-    uniqueID: 3269801301
+  - name: user
+    uniqueID: 2256793059
     locked: 0
-  - name: UI
-    uniqueID: 416295669
+  - name: test
+    uniqueID: 3720901377
     locked: 0

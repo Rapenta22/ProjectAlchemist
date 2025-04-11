@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0bb7e8a627d4ffa4fb634aa3a49dfe8f, type: 3}
   - {fileID: 21300000, guid: edc3c7518da973b43ad0c1c730f330f8, type: 3}
   m_objName: "\uC218\uBD84\uCD08"
-  Item: {fileID: 11400000, guid: c1bcb5caf2edec64e8fdb4cefecf47f5, type: 2}
+  m_itemData: {fileID: 11400000, guid: c1bcb5caf2edec64e8fdb4cefecf47f5, type: 2}
   amount: 1

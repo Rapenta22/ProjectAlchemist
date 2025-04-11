@@ -7,12 +7,13 @@ using UnityEngine;
 
 public class ItemData : ScriptableObject
 {
-    [SerializeField] string m_itemName;
-    [SerializeField] float m_maxAmount;
-    [SerializeField] float m_minAmount;
+    [SerializeField] ItemType.Type m_itemType = ItemType.Type.Material;
+    public string m_itemName;
+    public int m_maxStack;
     public Sprite m_itemIcon;
     public ItemType ItemType;
     [TextArea] public string description;
+    public bool m_usableItem;
 
-
+    public ItemType.Type IsItemType {  get { return m_itemType; } }
 }

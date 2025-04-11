@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum ItemType
-
+public class ItemType
 {
+    public enum Type
+
+    {
         Material,
-        Crafted,
-        Portion,
+        Powder,
+        Oil,
+        Potion,
         Quest,
-        Tools,
-        Upgrade_Res
+        SubMaterial
+    }
 }
+
