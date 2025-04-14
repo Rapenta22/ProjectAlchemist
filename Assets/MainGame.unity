@@ -1172,16 +1172,15 @@ MonoBehaviour:
   PotionItemPrefab: {fileID: 3045139200364000403, guid: 264cb33e0e3cd6b4d81969fa34191697,
     type: 3}
   NPotionList:
+  - {fileID: 11400000, guid: 143e0fb542ea2fe4cb978c43709f7bd3, type: 2}
+  - {fileID: 11400000, guid: 576dca011ddb418459f0738bb9bc2662, type: 2}
+  - {fileID: 11400000, guid: 470a76176434a2543b379d733d4f5228, type: 2}
+  - {fileID: 11400000, guid: db9dd6f5cd6b79d4bb126bec3a9476c2, type: 2}
+  - {fileID: 11400000, guid: 1a001bcc931fad842b6603b11b430b12, type: 2}
+  EPotionList:
   - {fileID: 11400000, guid: b017cfee265bcc84392d141f1bdbd0dd, type: 2}
   - {fileID: 11400000, guid: e05c64726b0289a468689fc4a00f3ec8, type: 2}
   - {fileID: 11400000, guid: 7fc968a05c6e2ad45927bcf6d0755fc5, type: 2}
-  - {fileID: 11400000, guid: 7fc968a05c6e2ad45927bcf6d0755fc5, type: 2}
-  - {fileID: 11400000, guid: 7fc968a05c6e2ad45927bcf6d0755fc5, type: 2}
-  - {fileID: 11400000, guid: 7fc968a05c6e2ad45927bcf6d0755fc5, type: 2}
-  - {fileID: 11400000, guid: 7fc968a05c6e2ad45927bcf6d0755fc5, type: 2}
-  EPotionList:
-  - {fileID: 11400000, guid: ecfd34c5e3e056b44a5cb56c9e0f384e, type: 2}
-  - {fileID: 11400000, guid: 587e887ef8ea5604ea259bf6a6e0c764, type: 2}
   MPotionList:
   - {fileID: 11400000, guid: f9596e77bb767f5449f51bb97e2e6d4a, type: 2}
   m_bookCraftUI: {fileID: 1501750201}
@@ -4965,6 +4964,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974580581}
   m_CullTransparentMesh: 1
+--- !u!1 &986726896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986726897}
+  m_Layer: 0
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &986726897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986726896}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1364220267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &986946807
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,6 +5130,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986946807}
   m_CullTransparentMesh: 1
+--- !u!1 &1001211926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001211927}
+  m_Layer: 0
+  m_Name: Obj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001211927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001211926}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1364220267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002075753
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,6 +6228,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152113988}
   m_CullTransparentMesh: 1
+--- !u!1 &1156387141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1156387142}
+  m_Layer: 0
+  m_Name: Building
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1156387142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156387141}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1364220267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190406583
 GameObject:
   m_ObjectHideFlags: 0
@@ -7028,6 +7120,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363151385}
   m_CullTransparentMesh: 1
+--- !u!1 &1364220266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364220267}
+  m_Layer: 0
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1364220267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364220266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1388.0885, y: 1112.8608, z: -5.8422155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1156387142}
+  - {fileID: 1001211927}
+  - {fileID: 986726897}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1375019439
 GameObject:
   m_ObjectHideFlags: 0
@@ -7497,16 +7623,8 @@ MonoBehaviour:
   craftItemPrefab: {fileID: 7101733734286481307, guid: 58ee3f10576a2dc43b1aedf6481b3a0c,
     type: 3}
   powderCraftList:
-  - {fileID: 11400000, guid: 68ee722f4a002814a9326ec94c273d10, type: 2}
-  - {fileID: 11400000, guid: d66530fb992a24046841b03dd4945c76, type: 2}
-  - {fileID: 11400000, guid: 7fb029d2f057dcb4491dcba432aa388f, type: 2}
-  - {fileID: 11400000, guid: 657254e8c9345e74289e84e259e6d281, type: 2}
-  - {fileID: 11400000, guid: d3f522ae7fd30084bb8061e7608d06c3, type: 2}
-  - {fileID: 11400000, guid: d3f522ae7fd30084bb8061e7608d06c3, type: 2}
-  - {fileID: 11400000, guid: d3f522ae7fd30084bb8061e7608d06c3, type: 2}
-  - {fileID: 11400000, guid: d3f522ae7fd30084bb8061e7608d06c3, type: 2}
-  - {fileID: 11400000, guid: d3f522ae7fd30084bb8061e7608d06c3, type: 2}
-  - {fileID: 11400000, guid: d3f522ae7fd30084bb8061e7608d06c3, type: 2}
+  - {fileID: 11400000, guid: 1f95aaf22864d004faa0347e9a263fd1, type: 2}
+  - {fileID: 11400000, guid: ca2dc5f39c342fe4d8b788d0f3f1a314, type: 2}
   oilCraftList:
   - {fileID: 11400000, guid: 441c0273efaa8084ba7d8b8856fa333d, type: 2}
   - {fileID: 11400000, guid: 69fde894e95e3384bbdfef50aab8b33c, type: 2}
@@ -12264,3 +12382,4 @@ SceneRoots:
   - {fileID: 1243702950}
   - {fileID: 1075142021}
   - {fileID: 1830893861}
+  - {fileID: 1364220267}

@@ -9,7 +9,7 @@ public class OilCraftData:ScriptableObject
 {
 
     [SerializeField] ItemType.Type m_itemType = ItemType.Type.Material;
-    [SerializeField] string m_Name = null;
+    [SerializeField] string m_name = null;
 
     [SerializeField] int m_index = 0;
     /// <summary>
