@@ -8,6 +8,9 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private int nowQuantity;
 
+    [SerializeField] private GameObject m_selected;
+
+
     private void OnValidate()
     {
         // 에디터에서 수량 바꾸면 텍스트도 자동 갱신됨
@@ -40,5 +43,14 @@ public class InventorySlot : MonoBehaviour
     }
 
     public int GetQuantity() => nowQuantity;
+
+    public void SetSelected(bool isOn)
+    {
+        Debug.Log($"{gameObject.name} → SetSelected({isOn})");
+
+        if (m_selected != null)
+            m_selected.SetActive(isOn);
+    }
+
 }
 

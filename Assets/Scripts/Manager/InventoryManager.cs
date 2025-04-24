@@ -19,13 +19,13 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(ItemData item, int amount = 1)
     {
         InventoryData.AddItem(item, amount);
-        GManager.Instance.InventoryUI.UpdateUI(); // 추가
+        GManager.Instance.IsInventoryUI.UpdateUI(); // 추가
     }
 
     public void RemoveItem(ItemData item, int amount = 1)
     {
         InventoryData.RemoveItem(item, amount);
-        GManager.Instance.InventoryUI.UpdateUI(); // 추가
+        GManager.Instance.IsInventoryUI.UpdateUI(); // 추가
     }
 
     public void CheckInvenItem(ItemData item, int amount)
@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
     {
         CheckInvenItem(item, amount); // 소모 전에 반드시 확인
         InventoryData.RemoveItem(item, amount);
-        GManager.Instance.InventoryUI.UpdateUI();
+        GManager.Instance.IsInventoryUI.UpdateUI();
     }
 
 

@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class SortingManager : MonoBehaviour
 {
-    public float detectionRadius = 4.0f; // 플레이어 감지 반경
+    public float detectionRadius = 4.0f;
     private Transform playerTransform;
     private SpriteRenderer playerRenderer;
 
-    private HashSet<Transform> childTransforms = new HashSet<Transform>(); // 중복 방지
+    private HashSet<Transform> childTransforms = new HashSet<Transform>();
     private Dictionary<Transform, SpriteRenderer> childRenderers = new Dictionary<Transform, SpriteRenderer>();
 
     void Start()
@@ -26,12 +26,12 @@ public class SortingManager : MonoBehaviour
             return;
         }
 
-        // 최초 자식 오브젝트 초기화
-        UpdateChildList();
+        UpdateChildList(); // 자식 초기화
+    }
 
-        // 0.2초마다 정렬 업데이트 (성능 최적화)
-        InvokeRepeating(nameof(UpdateSortingOrders), 0, 0.2f);
-        InvokeRepeating(nameof(UpdateChildList), 0, 1f); // 1초마다 자식 리스트 갱신
+    void Update()
+    {
+        UpdateSortingOrders(); // ✨ 매 프레임마다 정렬 갱신
     }
 
     private void UpdateChildList()
@@ -86,19 +86,6 @@ public class SortingManager : MonoBehaviour
                 {
                     childRenderer.sortingOrder = playerRenderer.sortingOrder - 1;
                 }
-            }
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        // 모든 자식의 감지 반경 표시
-        Gizmos.color = Color.green;
-        foreach (Transform child in childTransforms)
-        {
-            if (child != null)
-            {
-                Gizmos.DrawWireSphere(child.position, detectionRadius);
             }
         }
     }
