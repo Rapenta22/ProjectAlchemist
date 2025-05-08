@@ -15,9 +15,6 @@ MonoBehaviour:
   m_itemType: 1
   m_itemName: "\uD669\uAE08 \uBC00\uAC00\uB8E8"
   m_maxStack: 20
-  m_itemIcon: {fileID: 21300000, guid: 16f16ccf8a91bb54db09a26d2848a61f, type: 3}
-  description: "\uB728\uAC70\uC6B4 \uD587\uBE5B\uC758 \uC5D0\uB108\uC9C0\uB97C \uC794\uB729
-    \uBA38\uAE08\uC740 \uD669\uAE08\uBE5B \uBC00. \uAC00\uB8E8\uB97C \uB0B4\uC5B4,
-    \uBB49\uCE58\uBA74 \uAE08\uAD34\uCC98\uB7FC \uB2E8\uB2E8\uD55C \uACE0\uCCB4\uAC00
-    \uB41C\uB2E4."
+  m_itemIcon: {fileID: 21300000, guid: 8072f7576f45ba44db92ad29c43597d5, type: 3}
+  description: 
   m_usableItem: 0

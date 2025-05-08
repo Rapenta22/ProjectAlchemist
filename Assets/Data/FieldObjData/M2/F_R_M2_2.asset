@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34c8b377a13d6542b6797a0a5545ee4, type: 3}
   m_Name: F_R_M2_2
   m_EditorClassIdentifier: 
-  m_MaterialName: F_R_M2_2
+  m_MaterialName: "\uC544\uC774\uC2A4 \uD3EC\uADF8"
   stateSprites:
   - {fileID: 21300000, guid: a7c4cff4b455abd458e7557c9da3c87f, type: 3}
   - {fileID: 21300000, guid: a7668c428deca224b9080ace1b9501bf, type: 3}

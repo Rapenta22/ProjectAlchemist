@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34c8b377a13d6542b6797a0a5545ee4, type: 3}
   m_Name: F_R_M3_1
   m_EditorClassIdentifier: 
-  m_MaterialName: F_R_M3_1
+  m_MaterialName: "\uC740\uBE5B \uBCF4\uB9AC"
   stateSprites:
-  - {fileID: 21300000, guid: c87016f73c4997a4ca6ac2afcddd11e4, type: 3}
-  - {fileID: 21300000, guid: 923234bbca540be4c947142086e7ac50, type: 3}
-  m_objName: F_R_M3_1_Silver Barley
-  m_itemData: {fileID: 11400000, guid: 05a02170e2faf7b4fae0fbc3b83e9947, type: 2}
+  - {fileID: 21300000, guid: f48339d605f9e404fb14c1bb0993b857, type: 3}
+  - {fileID: 21300000, guid: f0ea4feaf74520340a456d19d8f987e5, type: 3}
+  m_objName: "\uC740\uBE5B \uBCF4\uB9AC"
+  m_itemData: {fileID: 11400000, guid: ed7ba9b7bf0555d4a9534e62263e942b, type: 2}
   amount: 1

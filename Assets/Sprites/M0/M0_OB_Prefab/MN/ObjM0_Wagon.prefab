@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3732937702119730585}
   - component: {fileID: 7918359140519698516}
-  - component: {fileID: 1458040475934654859}
+  - component: {fileID: 433485986805617266}
   m_Layer: 0
   m_Name: ObjM0_Wagon
   m_TagString: Untagged
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1458040475934654859
-BoxCollider2D:
+--- !u!60 &433485986805617266
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.040107965, y: 0.03609693}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,6 +127,24 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.360216, y: 3.9378064}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.6668968, y: -1.1029269}
+      - {x: -1.8973355, y: -1.9423295}
+      - {x: 0.09503287, y: -0.70751816}
+      - {x: 0.70226836, y: -0.6358254}
+      - {x: 1.0026925, y: -1.216616}
+      - {x: 1.499459, y: -1.3770106}
+      - {x: 2.0190456, y: -1.1036385}
+      - {x: 2.2780106, y: -0.669071}
+      - {x: 2.1857963, y: 0.0027592853}
+      - {x: 2.5238478, y: 0.17645466}
+      - {x: 2.4593022, y: 0.9956837}
+      - {x: 2.6812143, y: 1.1188716}
+      - {x: 1.5745451, y: 2.035327}
+      - {x: -1.0046232, y: 0.9855463}
+      - {x: -0.7962401, y: 0.7844751}
+      - {x: -0.76681274, y: 0.1531179}
+      - {x: -0.9627866, y: 0.040684998}
+      - {x: -1.028682, y: 0.08891451}
+  m_UseDelaunayMesh: 0

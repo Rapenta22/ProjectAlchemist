@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: C_P_M1_0
   m_EditorClassIdentifier: 
   m_itemType: 1
-  m_name: 
+  m_name: "\uC57C\uAD11 \uBC84\uC12F \uAC00\uB8E8"
   m_index: 0
   m_inputItemData: {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  m_outputItemData: {fileID: 11400000, guid: 74551a8008e8f074a8e68cba056e3282, type: 2}
+  m_outputItemData: {fileID: 11400000, guid: dd266de2b27c51849b5af192a2ffed31, type: 2}
   m_outputAmount: 1
   m_inputAmount: 1
