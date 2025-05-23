@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7214972229649338901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: "\uBC30\uB974\uADF8\uB974 \uAE30\uBCF8"
+  m_nodeType: 0
+  m_position: {x: 239, y: 106}
+  m_speakerPosition: 1
+  m_speakerName: "\uBC30\uB974\uADF8\uB974"
+  m_dialogueText: "\uC544.. \uADC0\uCC2E\uC544"
+  m_characterPortrait: {fileID: 21300000, guid: 87091056cf6777447be6a8c934747625,
+    type: 3}
+  m_nextNode: {fileID: -3837247564991773760}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-3837247564991773760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_2
+  m_nodeType: 3
+  m_position: {x: 501, y: 101}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: NPC_Default
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: 0}
+  - {fileID: -7214972229649338901}
+  - {fileID: -3837247564991773760}
+  - {fileID: 1515740658805058932}
+--- !u!114 &1515740658805058932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: "\uB9E5\uC2A4 \uAE30\uBCF8"
+  m_nodeType: 0
+  m_position: {x: 244, y: 271}
+  m_speakerPosition: 1
+  m_speakerName: "\uB9E5\uC2A4"
+  m_dialogueText: "\uC5B4\uC11C\uC624\uAC8C!"
+  m_characterPortrait: {fileID: 21300000, guid: 1e7a09b29993e99449b6c2e665c6752d,
+    type: 3}
+  m_nextNode: {fileID: -3837247564991773760}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

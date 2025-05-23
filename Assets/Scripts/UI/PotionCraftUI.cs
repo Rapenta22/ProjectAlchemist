@@ -81,6 +81,7 @@ public class PotionCraftUI : MonoBehaviour
         SwitchTab(TabType.Novice);
         SetupCraftList();
         HighlightSlot();
+        autoFindExchangeManager();
 
     }
 
@@ -147,6 +148,10 @@ public class PotionCraftUI : MonoBehaviour
 
 
         // 탭 UI 표시 처리도 있으면 여기에 추가
+    }
+    public void autoFindExchangeManager()
+    {
+        m_exchangeManager = FindObjectOfType<ExchangeManager>();
     }
     /// <summary>
     /// 탭 UI 색상 업데이트

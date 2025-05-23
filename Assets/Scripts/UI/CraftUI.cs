@@ -5,38 +5,42 @@ using UnityEngine.UI;
 
 public class CraftUI : MonoBehaviour
 {
-    [SerializeField] private ExchangeManager m_exchangeManager;
+    [SerializeField] ExchangeManager m_exchangeManager;
 
-    [SerializeField] private TMP_Text tabLabelText;
+    [SerializeField] TMP_Text tabLabelText;
 
-    [SerializeField] private Slot podwerInputSlot;
-    [SerializeField] private Slot podwerOutputSlot;
-    [SerializeField] private Slot oilInput1Slot;
-    [SerializeField] private Slot oilInput2Slot;
-    [SerializeField] private Slot oilOutputSlot;
+    [SerializeField] Slot podwerInputSlot;
+    [SerializeField] Slot podwerOutputSlot;
+    [SerializeField] Slot oilInput1Slot;
+    [SerializeField] Slot oilInput2Slot;
+    [SerializeField] Slot oilOutputSlot;
 
-    [SerializeField] private GameObject m_podwerBox;
-    [SerializeField] private GameObject m_oilBox;
-    [SerializeField] private GameObject m_craftUI;
+    [SerializeField] GameObject m_podwerBox;
+    [SerializeField] GameObject m_oilBox;
+    [SerializeField] GameObject m_craftUI;
 
     [Header("탭 표시용 오브젝트 (이미지 등)")]
-    [SerializeField] private GameObject powderTabObject;
-    [SerializeField] private GameObject oilTabObject;
+    [SerializeField] GameObject powderTabObject;
+    [SerializeField] GameObject oilTabObject;
 
     [Header("스크롤 리스트")]
-    [SerializeField] private Transform contentRoot;
-    [SerializeField] private GameObject craftItemPrefab;
+    [SerializeField] Transform contentRoot;
+    [SerializeField] GameObject craftItemPrefab;
 
     [Header("탭별 제작 데이터")]
-    [SerializeField] private List<CraftData> powderCraftList;
-    [SerializeField] private List<OilCraftData> oilCraftList;
+    [SerializeField] List<CraftData> powderCraftList;
+    [SerializeField] List<OilCraftData> oilCraftList;
 
     [Header("리스트 표시 부모")]
-    [SerializeField] private Transform craftListContent;
-    [SerializeField] private ScrollRect scrollRect;
+    [SerializeField] Transform craftListContent;
+    [SerializeField] ScrollRect scrollRect;
+
+    [SerializeField] Animator m_powderTagAnimator;
+    [SerializeField] Animator m_oilTagAnimator;
+
 
     private float scrollStepY = 100f;     // 슬롯 하나 높이
-    private enum TabType { Powder, Oil }
+    public enum TabType { Powder, Oil }
     private TabType currentTab = TabType.Powder;
     private List<CraftListUI> slotList = new List<CraftListUI>();
     private int selectedIndex = 0;
@@ -51,6 +55,7 @@ public class CraftUI : MonoBehaviour
         SetupCraftList();
         HighlightSlot();
         InitCraftUI();
+        autoFindExchangeManager();
     }
     void Update()
     {
@@ -68,18 +73,35 @@ public class CraftUI : MonoBehaviour
             TryCraftSelected();
         }
     }
+    private bool hasInitialized = false;
+
     void SwitchTab(TabType tab)
     {
-        currentTab = tab;
-        m_podwerBox.SetActive(tab == TabType.Powder);
-        m_oilBox.SetActive(tab == TabType.Oil);
+        bool isPowder = (tab == TabType.Powder);
 
-        tabLabelText.text = (tab == TabType.Powder) ? "분쇄기" : "추출기";
+        // 처음 진입 시엔 애니메이션 재생하지 않음
+        if (hasInitialized)
+        {
+            m_powderTagAnimator.SetBool("IsOn", isPowder);
+            m_oilTagAnimator.SetBool("IsOn", !isPowder);
+        }
+        else
+        {
+            // Animator 파라미터를 건드리지 않고 초기화만
+            hasInitialized = true;
+        }
+
+        currentTab = tab;
+
+        m_podwerBox.SetActive(isPowder);
+        m_oilBox.SetActive(!isPowder);
+        tabLabelText.text = isPowder ? "분쇄기" : "추출기";
 
         SetupCraftList();
         selectedIndex = 0;
         HighlightSlot();
     }
+
     private void SetupCraftList()
     {
         foreach (Transform child in craftListContent)
@@ -114,6 +136,11 @@ public class CraftUI : MonoBehaviour
             }
         }
     }
+    public void autoFindExchangeManager()
+    {
+        m_exchangeManager = FindObjectOfType<ExchangeManager>();
+    }
+
     private void HighlightSlot()
     {
         for (int i = 0; i < slotList.Count; i++)
