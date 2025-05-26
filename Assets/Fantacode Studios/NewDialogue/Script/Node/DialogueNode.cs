@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum SpeakerPosition
 {
@@ -31,7 +30,7 @@ public class DialogueNode : ScriptableObject
     public string m_speakerName;
     [TextArea] public string m_dialogueText;
     public Sprite m_characterPortrait;
-    
+
     [Header("다음 노드")]
     public DialogueNode m_nextNode;
 
@@ -43,16 +42,15 @@ public class DialogueNode : ScriptableObject
     public DialogueNode ifTrueNode;
     public DialogueNode ifFalseNode;
 
-
     [Header("컷신")]
     public Sprite m_cutSceneSprite;
+
     [Header("퀘스트 연동")]
     public string m_talkNpcID; // Talk Step 자동완성용
 
     public bool CheckQuestCondition(QuestDialogueCondition cond)
     {
         var qm = GManager.Instance.IsQuestManager;
-
         string state = qm.GetQuestState(cond.m_questId);
         if (!state.Equals(cond.m_requiredState, System.StringComparison.OrdinalIgnoreCase))
             return false;
@@ -89,8 +87,6 @@ public class DialogueNode : ScriptableObject
                     break;
                 }
 
-
-
             case NodeType.CutScene:
                 manager.ShowCutScene(m_cutSceneSprite, m_nextNode);
                 break;
@@ -100,16 +96,28 @@ public class DialogueNode : ScriptableObject
 
                 if (!string.IsNullOrEmpty(m_talkNpcID))
                 {
-                    Debug.Log($"[DialogueNode] TryTalkToNPC 호출: {m_talkNpcID}");
-                    GManager.Instance.IsQuestManager.TryTalkToNPC(m_talkNpcID);
-                }
+                    var qm = GManager.Instance.IsQuestManager;
 
+                    // Talk 처리
+                    qm.TryTalkToNPC(m_talkNpcID);
+
+                    // Deliver 처리
+                    foreach (var questID in qm.GetAllStartedQuests())
+                    {
+                        var step = qm.GetCurrentStep(questID);
+                        if (step != null &&
+                            step.m_stepType == QuestStepType.Deliver &&
+                            step.m_targetNpcId == m_talkNpcID)
+                        {
+                            if (qm.CheckDeliverCondition(questID))
+                            {
+                                qm.CompleteDeliverStep(questID);
+                            }
+                        }
+                    }
+                }
                 manager.EndDialogue();
                 break;
-
-
         }
     }
-
-
 }

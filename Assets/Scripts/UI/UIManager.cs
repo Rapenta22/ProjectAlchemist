@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     public GameObject PotionCraftUI;
     public GameObject ShopUI;
     public GameObject DialogueUI;
+    public GameObject BookUI;
 
     /// <summary>
     /// 플래그 세팅
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
                 || PotionCraftUIOpenFlag
                 || DialogueOpenFlag
                 || ShopUIOpenFlag
+                || BookUIOpenFlag
                 || GManager.Instance.IsInventoryUI.isOpen;
 
         }
@@ -27,6 +29,7 @@ public class UIManager : MonoBehaviour
     public bool PotionCraftUIOpenFlag = false;
     public bool DialogueOpenFlag = false;
     public bool ShopUIOpenFlag = false;
+    public bool BookUIOpenFlag = false;
     /*void Awake()
     {
         if (CraftUI == null) CraftUI = GameObject.Find("CraftUI");
@@ -38,6 +41,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        HandleBookUIOpen();
         CloseUI();
     }
     public void OpenCraftUI()
@@ -58,6 +62,12 @@ public class UIManager : MonoBehaviour
         ShopUIOpenFlag = true;
         ShopUI.SetActive(true);
         GManager.Instance.IsShopUI.InitShopUI();
+    }
+    public void OpenBookUI()
+    {
+        BookUIOpenFlag = true;
+        BookUI.SetActive(true);
+//        GManager.Instance.IsBookUI.InitBookUI();
     }
 
     public void OpenDialogueUI(DialogueNode startNode)
@@ -80,6 +90,23 @@ public class UIManager : MonoBehaviour
 
         GManager.Instance.IsDialogueManager.StartDialogue(startNode);
     }
+
+    private void HandleBookUIOpen()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            // BookUI가 현재 열려있으면 무시, 아니면 열기
+            if (!BookUIOpenFlag)
+            {
+                OpenBookUI();
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
+
     public void CloseUI()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -104,6 +131,11 @@ public class UIManager : MonoBehaviour
             {
                 DialogueOpenFlag = false;
                 DialogueUI.SetActive(false);
+            }
+            if (BookUIOpenFlag)
+            {
+                BookUIOpenFlag = false;
+                BookUI.SetActive(false);
             }
             GManager.Instance.IsUserController.isInteracting = false; // 인터렉션 가능 상태로 복원
 

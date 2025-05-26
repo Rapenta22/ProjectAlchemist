@@ -17,6 +17,10 @@ public class QuestStep
 
     [Header("맵 관련")]
     public string m_targetMapId;
+
+    [Header("다음 퀘스트")]
+    public string m_nextQuestID;
+
 }
 
 public enum QuestStepType

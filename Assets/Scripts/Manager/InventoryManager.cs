@@ -19,8 +19,12 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(ItemData item, int amount = 1)
     {
         InventoryData.AddItem(item, amount);
-        GManager.Instance.IsInventoryUI.UpdateUI(); // 추가
+        GManager.Instance.IsInventoryUI.UpdateUI();
+
+        // 아이템 추가 시 퀘스트 자동 조건 확인
+        GManager.Instance.IsQuestManager.TryCompleteStepAll();
     }
+
 
     public void RemoveItem(ItemData item, int amount = 1)
     {

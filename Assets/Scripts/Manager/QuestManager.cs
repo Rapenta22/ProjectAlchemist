@@ -46,35 +46,40 @@ public class QuestManager : MonoBehaviour
         switch (step.m_stepType)
         {
             case QuestStepType.Visit:
-                {
-                    string currentMap = GManager.Instance.currentMapGroup?.name;
-                    string targetMap = step.m_targetMapId;
+                string currentMap = GManager.Instance.currentMapGroup?.name;
+                string targetMap = step.m_targetMapId;
 
-                    Debug.Log($"[Quest Visit] 현재 맵: {currentMap}, 타겟 맵: {targetMap}");
+                Debug.Log($"[Quest Visit] 현재 맵: {currentMap}, 타겟 맵: {targetMap}");
 
-                    if (currentMap == targetMap)
-                    {
-                        Debug.Log($"[Quest Visit] 맵 일치 - 스텝 완료 처리됨");
-                        AdvanceStep(questID);
-                    }
-                    else
-                    {
-                        Debug.Log($"[Quest Visit] 맵 불일치 - 진행 조건 미달");
-                    }
-                    break;
-                }
-            case QuestStepType.Gather:
-            case QuestStepType.Craft:
-                if (InventoryManager.Instance.IsInventoryData.HasItem(step.m_targetItem, step.m_requiredAmount) ||
-                    GManager.Instance.currentMapGroup.name == step.m_targetMapId)
+                if (currentMap == targetMap)
                 {
+                    Debug.Log($"[Quest Visit] 맵 일치 - 스텝 완료 처리됨");
                     AdvanceStep(questID);
                 }
+                else
+                {
+                    Debug.Log($"[Quest Visit] 맵 불일치 - 진행 조건 미달");
+                }
+                break;
+
+            case QuestStepType.Gather:
+            case QuestStepType.Craft:
+                if (GManager.Instance.IsinvenManager == null ||
+                    GManager.Instance.IsinvenManager.IsInventoryData == null ||
+                    step.m_targetItem == null)
+                {
+                    Debug.LogError("[QuestManager] 인벤토리 매니저나 데이터가 null입니다.");
+                    return;
+                }
+
+                bool hasItem = GManager.Instance.IsinvenManager.IsInventoryData.HasItem(step.m_targetItem, step.m_requiredAmount);
+                if (hasItem)
+                    AdvanceStep(questID);
                 break;
 
             case QuestStepType.Talk:
             case QuestStepType.Deliver:
-                // 외부에서 처리: 예를 들어 NPC 대화 인터랙션에서 TryTalkToNPC 호출
+                // Deliver는 End 노드에서 따로 처리
                 break;
         }
     }
@@ -101,18 +106,53 @@ public class QuestManager : MonoBehaviour
     }
     public void TryVisit()
     {
-        foreach (var kvp in m_questStates)
+        //  Dictionary의 키 리스트를 미리 복사
+        var questKeys = new List<string>(m_questStates.Keys);
+
+        foreach (var questID in questKeys)
         {
-            if (kvp.Value == "Started")
+            if (m_questStates[questID] == "Started")
             {
-                var step = GetCurrentStep(kvp.Key);
+                var step = GetCurrentStep(questID);
                 if (step != null && step.m_stepType == QuestStepType.Visit)
                 {
-                    TryCompleteStep(kvp.Key); // 내부에서 자동 비교 수행
+                    TryCompleteStep(questID);
                 }
             }
         }
     }
+    public List<string> GetAllStartedQuests()
+    {
+        List<string> result = new();
+        foreach (var kvp in m_questStates)
+        {
+            if (kvp.Value == "Started")
+                result.Add(kvp.Key);
+        }
+        return result;
+    }
+    public bool CheckDeliverCondition(string questID)
+    {
+        var step = GetCurrentStep(questID);
+        if (step == null || step.m_stepType != QuestStepType.Deliver)
+            return false;
+
+        return GManager.Instance.IsinvenManager.IsInventoryData.HasItem(step.m_targetItem, step.m_requiredAmount);
+    }
+    public void CompleteDeliverStep(string questID)
+    {
+        var step = GetCurrentStep(questID);
+        if (step == null || step.m_stepType != QuestStepType.Deliver)
+            return;
+
+        if (GManager.Instance.IsinvenManager.IsInventoryData.HasItem(step.m_targetItem, step.m_requiredAmount))
+        {
+            GManager.Instance.IsinvenManager.RemoveItem(step.m_targetItem, step.m_requiredAmount);
+            AdvanceStep(questID);
+            Debug.Log($"[QuestManager] Deliver Step 완료 처리: {questID}");
+        }
+    }
+
 
     private void AdvanceStep(string questID)
     {
@@ -133,6 +173,15 @@ public class QuestManager : MonoBehaviour
         else
         {
             Debug.Log($"[퀘스트 진행] {questID} - 마지막 Step {step} 완료 → 퀘스트 완료 예정");
+
+            //마지막 스텝에 다음 퀘스트가 지정돼 있으면 시작
+            var currentStep = data.m_questSteps[step];
+            if (!string.IsNullOrEmpty(currentStep.m_nextQuestID))
+            {
+                Debug.Log($"[퀘스트 진행] {questID} - 다음 퀘스트 자동 시작: {currentStep.m_nextQuestID}");
+                StartQuest(currentStep.m_nextQuestID);
+            }
+
             CompleteQuest(questID);
         }
 
@@ -251,6 +300,16 @@ public class QuestManager : MonoBehaviour
                     QuestID = kvp.Key,
                     StepIndex = GetCurrentStepIndex(kvp.Key)
                 });
+            }
+        }
+    }
+    public void TryCompleteStepAll()
+    {
+        foreach (var kvp in m_questStates)
+        {
+            if (kvp.Value == "Started")
+            {
+                TryCompleteStep(kvp.Key);
             }
         }
     }

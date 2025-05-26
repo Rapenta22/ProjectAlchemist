@@ -112,4 +112,14 @@ public class GatheringObject : MonoBehaviour, InterAct.IInteractable
         if (GManager.Instance.IsinvenManager != null)
             GManager.Instance.IsinvenManager.AddItem(data.m_itemData, data.amount);
     }
+    public void ResetCollectState()
+    {
+        isCollected = false;
+        isInRange = false;
+
+        // 스프라이트도 기본 상태로 되돌리기
+        SetSprite(0);
+        SetGuideVisible(false);
+    }
+
 }
