@@ -86,6 +86,11 @@ public class PotionCraftUI : MonoBehaviour
     public float holdDelay = 0.2f;
     public float holdTimer = 0f;
 
+    private bool m_inputLock = false;
+    private float m_inputLockDuration = 0.5f;
+    private float m_inputLockTimer = 0f;
+
+
     void Start()
     {
         completePanel.SetActive(false);
@@ -103,10 +108,19 @@ public class PotionCraftUI : MonoBehaviour
     {
         if (!gameObject.activeSelf) return;
 
+        // m_inputLock 타이머 처리 (항상 매 프레임 실행)
+        if (m_inputLock)
+        {
+            m_inputLockTimer -= Time.deltaTime;
+            if (m_inputLockTimer <= 0f)
+            {
+                m_inputLock = false;
+            }
+        }
+
         // 탭 전환
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            // 순서대로: Novice → Expert → Master → 다시 Novice
             switch (currentTab)
             {
                 case TabType.Novice:
@@ -119,38 +133,34 @@ public class PotionCraftUI : MonoBehaviour
                     currentTab = TabType.Novice;
                     break;
             }
-
             SwitchTab(currentTab);
         }
+
         HandleSlotMoveInput();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (currentState == UIState.List)
+            if (currentState == UIState.List && !m_inputLock)
             {
-                TrySelected(); // 리스트 → 상세 정보 전환
+                TrySelected();
             }
-            else if (currentState == UIState.Craft)
+            else if (currentState == UIState.Craft && !m_inputLock)
             {
-                StartCoroutine(TryCraftCoroutine()); // 코루틴으로 제작 시도
+                StartCoroutine(TryCraftCoroutine());
             }
         }
-
-        if (!gameObject.activeSelf) return;
 
         if (Input.GetKeyDown(KeyCode.Z) && currentState == UIState.Craft)
         {
             currentState = UIState.List;
             m_bookCraftUI.SetActive(false);
 
-            // 슬롯 초기화
             m_Input1Slot.Clear();
             m_Input2Slot.Clear();
             m_OutputSlot.Clear();
 
             Debug.Log("[PotionCraftUI] 리스트 모드로 복귀 - 상세 박스 초기화됨");
         }
-
     }
     void SwitchTab(TabType tab)
     {
@@ -359,10 +369,16 @@ public class PotionCraftUI : MonoBehaviour
         }
 
         // 실제 제작
+
+        UpdateInputSlotDim(data);
+
+        yield return StartCoroutine(PlayPotionCompleteSequence(data));
+
+
+        yield return new WaitForSeconds(2f);
+
         m_exchangeManager.PotionCraft(data);
         Debug.Log($"[TryCraft] 제작 성공! {data.IsOutputItem.m_itemName} × {data.IsOAmount}");
-        UpdateInputSlotDim(data);
-        PlayPotionCompleteSequence();
     }
 
 
@@ -472,49 +488,37 @@ public class PotionCraftUI : MonoBehaviour
                 return "기타";
         }
     }
-    public void PlayPotionCompleteSequence()
+    public IEnumerator PlayPotionCompleteSequence(PotionCraftData data)
     {
-        // 1. toggleObjects 4개만 비활성화
         foreach (var obj in toggleObjects)
             obj.SetActive(false);
 
-        // 2. 영상 재생 코루틴 실행 (이 스크립트 붙은 오브젝트는 활성화 상태 유지)
-        StartCoroutine(PlayVideoAndShowCompletePanel());
-    }
-
-    private IEnumerator PlayVideoAndShowCompletePanel()
-    {
-        // 영상 클립 가져오기
+        // 영상 재생
         var clip = GManager.Instance.IsVideoManager.GetVideoClipByName("PotionMake_Lv1_CutScene");
         if (clip != null)
         {
-            // 영상 재생
             yield return StartCoroutine(GManager.Instance.IsVideoManager.PlayVideoRoutine(clip));
         }
         else
         {
-            Debug.LogWarning("[PlayVideoAndShowCompletePanel] 영상 클립을 찾을 수 없습니다.");
+            Debug.LogWarning("[PlayPotionCompleteSequence] 영상 클립을 찾을 수 없습니다.");
         }
 
-        // 3. 영상 종료 후 완료 패널 활성화
+        // 완료 패널 표시
+        m_resultPotion.sprite = data.IsPotionIllust;
+        m_resultPotion_name.text = $"{data.IsName} 제작 완료!";
         completePanel.SetActive(true);
 
-        // 4. 스페이스 키 입력 대기
         yield return new WaitForSeconds(2f);
 
-        // 5. 완료 패널 비활성화 및 UI 복원
         completePanel.SetActive(false);
-
-        m_potionCraftUI.SetActive(true);
-        // 상세 UI는 필요시 활성화
-        m_bookCraftUI.SetActive(false);
-
         foreach (var obj in toggleObjects)
             obj.SetActive(true);
 
-        // 6. 상태 초기화
         currentState = UIState.List;
         HighlightSlot();
+        LockInputTemporarily();
+
     }
     private void UpdateInputSlotDim(PotionCraftData data)
     {
@@ -529,6 +533,12 @@ public class PotionCraftUI : MonoBehaviour
 
         bool shouldDimOutput = !hasInput1 || !hasInput2;
         m_OutputSlot.SetIconColor(shouldDimOutput ? dimmedColor : normalColor);
+    }
+    // 대화 연출 끝난 뒤 또는 제작 연출 끝난 뒤에 호출
+    private void LockInputTemporarily()
+    {
+        m_inputLock = true;
+        m_inputLockTimer = m_inputLockDuration;
     }
 
 }

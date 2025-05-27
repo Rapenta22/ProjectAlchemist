@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GatheringObject : MonoBehaviour, InterAct.IInteractable
+public class GatheringObject : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private float interactionDistance = 2.0f; // 상호작용 거리
@@ -22,9 +22,7 @@ public class GatheringObject : MonoBehaviour, InterAct.IInteractable
         {
             spriteRenderer.sprite = data.stateSprites[0];
         }
-        else
-        {
-        }
+
     }
     private void Update()
     {
@@ -83,16 +81,7 @@ public class GatheringObject : MonoBehaviour, InterAct.IInteractable
         }
     }
 
-    public void Interact()
-    {
-        // 상호작용 로직
-        if (isCollected)
-        {
-            return;
-        }
-        isCollected = true;
-        Collect();
-    }
+
     public void Collect()
     {
         if (isCollected)

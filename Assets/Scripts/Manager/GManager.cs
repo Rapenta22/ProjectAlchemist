@@ -26,6 +26,7 @@ public class GManager : MonoBehaviour
     public ShopUI IsShopUI { get { return m_shopUI; } }
     [Header("사운드 관련")]
     public MapBGMController mapBGMController;
+
     [SerializeField] private SoundManager m_soundManager;
     public SoundManager IsSoundManager { get { return m_soundManager; } }
     /// <summary>

@@ -13,18 +13,57 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneLoaded += OnSceneLoaded;
+        DontDestroyOnLoad(this.gameObject);
 
-        DontDestroyOnLoad(gameObject);
+    }
+    public static void LoadScene(string sceneName)
+    {
+        if (GManager.Instance?.mapBGMController != null)
+            GManager.Instance.mapBGMController.StopBGM();
+
+        GManager.Instance.StartCoroutine(GManager.Instance.IsFadeInOut.LoadSceneWithFade(sceneName));
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
         if (GManager.Instance != null)
         {
             GManager.Instance.AutoReferenceSceneObjects();
+            if (GManager.Instance?.mapBGMController != null)
+                GManager.Instance.mapBGMController.StopBGM();
+            // 씬별 BGM 재생 (Title, MainGame 등)
+            switch (scene.name)
+            {
+                case "Title":
+                    GManager.Instance.mapBGMController.PlayTitleBGM();
+                    break;
+                case "MainGame":
+                    // 코루틴이 아니라 바로 실행
+                    SetupMainGame();
+
+                    break;
+                default:
+                    Debug.Log("[SceneLoader] BGM 미설정 씬: " + scene.name);
+                    break;
+            }
         }
+
         StartCoroutine(DelayedStart(scene));
+    }
+
+    private void SetupMainGame()
+    {
+
+        if (GManager.Instance?.mapBGMController != null)
+        {
+            GManager.Instance.mapBGMController.SetupMapsAfterSceneLoad();
+
+            var mapObj = GameObject.Find("MapM0_CityHall");
+            if (mapObj != null)
+            {
+                GManager.Instance.mapBGMController.PlayBGMForMap(mapObj);
+            }
+        }
     }
 
     private IEnumerator DelayedStart(Scene scene)
@@ -58,14 +97,6 @@ public class SceneLoader : MonoBehaviour
             {
                 GManager.Instance.Setting(character);
             }
-
-
-            // onAfterSceneLoad 액션이 있으면 호출
-            if (onAfterSceneLoad != null)
-            {
-            }
-            onAfterSceneLoad?.Invoke();
-            onAfterSceneLoad = null;
         }
         else
         {
@@ -82,4 +113,9 @@ public class SceneLoader : MonoBehaviour
 
         GManager.Instance.StartCoroutine(GManager.Instance.IsFadeInOut.LoadSceneWithFade("LoadingScene"));
     }
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
 }

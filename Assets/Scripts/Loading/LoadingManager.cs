@@ -53,7 +53,7 @@ public class LoadingManager : MonoBehaviour
 
         if (playIntro)
         {
-            var introClip = Resources.Load<VideoClip>("Video/MV_Op");
+            var introClip = Resources.Load<VideoClip>("Video/OP_KR.ver");
             yield return StartCoroutine(GManager.Instance.IsVideoManager.PlayVideoRoutine(introClip));
         }
 

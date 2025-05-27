@@ -20,8 +20,8 @@ public class UserController : ParentController
     /// 인터렉터블인터페이스
     /// </summary>
     public IInteractableInterface currentTarget = null;
-
     public List<Collider2D> interactablesInRangeList = new List<Collider2D>();
+    private IInteractableInterface m_focusedInteractable = null;
     /// <summary>
     /// 이동 플래그 
     /// </summary>
@@ -72,27 +72,13 @@ public class UserController : ParentController
             StopFootstepSound();
             return;
         }
-        if (GManager.Instance == null)
+        if (GManager.Instance.IsUIManager.EscapeKeyUIOpenFlag)
         {
-            Debug.LogError("[UserController] GManager.Instance가 null입니다.");
-            return;
-        }
-
-        if (GManager.Instance.IsInventoryUI == null)
-        {
-            Debug.LogError("[UserController] IsInventoryUI가 null입니다.");
-            return;
-        }
-
-        if (GManager.Instance.IsInventoryUI.isOpen)
-        {
-            Debug.Log("[UserController] 인벤토리 UI가 열려 있어 이동 불가.");
             m_input = Vector2.zero;
             m_rb.velocity = Vector2.zero;
             animator.SetBool("isMove", false);
             return;
         }
-
         if (GManager.Instance.IsUIManager.UIOpenFlag)
         {
             m_input = Vector2.zero;
@@ -150,6 +136,8 @@ public class UserController : ParentController
             if (!interactablesInRangeList.Contains(other))
             {
                 interactablesInRangeList.Add(other);
+                UpdateFocus();
+
             }
         }
     }
@@ -158,6 +146,8 @@ public class UserController : ParentController
         if (interactablesInRangeList.Contains(other))
         {
             interactablesInRangeList.Remove(other);
+            UpdateFocus();
+
         }
     }
     public void SetMoveFlag(bool m_moveFlag)
@@ -171,40 +161,69 @@ public class UserController : ParentController
             animator.SetBool("isMove", false);
         }
     }
+    private void UpdateFocus()
+    {
+        // 가장 가까운 인터렉트 가능한 오브젝트 찾기
+        IInteractableInterface closest = null;
+        float closestDistance = float.MaxValue;
+
+        foreach (var col in interactablesInRangeList)
+        {
+            var interactable = col.GetComponent<IInteractableInterface>();
+            if (interactable == null) continue;
+
+            float dist = Vector2.Distance(transform.position, col.transform.position);
+            if (dist < closestDistance)
+            {
+                closestDistance = dist;
+                closest = interactable;
+            }
+        }
+
+        if (m_focusedInteractable != closest)
+        {
+            if (m_focusedInteractable != null)
+                m_focusedInteractable.OnFocusExit();
+
+            m_focusedInteractable = closest;
+
+            if (m_focusedInteractable != null)
+                m_focusedInteractable.OnFocusEnter();
+        }
+    }
     /// <summary>
     /// 인터렉션 인터페이스 
     /// </summary>
     private void Interact()
     {
-        if (isInteracting) return; // 중복 인터렉션 차단
+        Debug.Log("[UserController] Interact() 호출됨");
 
-        // UI가 열려 있으면 상호작용 막기
-        if (GManager.Instance != null && GManager.Instance.IsUIManager != null)
+        if (isInteracting)
         {
-            if (GManager.Instance.IsUIManager.UIOpenFlag)
-            {
-                return;
-            }
+            Debug.Log("[UserController] 이미 인터렉션 중이므로 중복 차단");
+            return; // 중복 인터렉션 차단
         }
 
+        if (GManager.Instance != null && GManager.Instance.IsUIManager != null && GManager.Instance.IsUIManager.UIOpenFlag)
+        {
+            Debug.Log("[UserController] UI가 열려 있어 상호작용 불가");
+            return; // UI 열려있으면 인터렉션 차단
+        }
         isInteracting = true;
 
-        if (interactablesInRangeList.Count == 0)
+        if (m_focusedInteractable != null)
         {
-            return;
+            Debug.Log($"[UserController] 상호작용 대상 있음");
+            m_focusedInteractable.Interact();
+        }
+        else
+        {
+            Debug.Log("[UserController] 상호작용 대상 없음");
+            isInteracting = false;
         }
 
-        foreach (var col in interactablesInRangeList)
-        {
-
-            var target = col.GetComponent<IInteractableInterface>();
-            if (target != null)
-            {
-                target.Interact();
-                break;
-            }
-        }
     }
+
 
     public void ResetMoveAndAnimation()
     {
@@ -257,6 +276,11 @@ public class UserController : ParentController
     private void StopFootstepSound()
     {
         SoundManager.Instance.StopPlayerSound(0); // 사운드 정지 함수 필요
+    }
+    // 예시: 인터랙션 완료 콜백 메서드 추가
+    public void OnInteractionComplete()
+    {
+        isInteracting = false;
     }
 
 }

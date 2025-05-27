@@ -33,6 +33,10 @@ public class QuestDialogueEntry
 
 public class NPCInterAct : MonoBehaviour, IInteractableInterface
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite normalSprite;
+    [SerializeField] private Sprite highlightSprite;
+    [SerializeField] private GameObject guideUI;
     [Header("NPC 고유 ID")]
     public string m_npcID;
     [Header("퀘스트 조건별 대사")]
@@ -100,6 +104,24 @@ public class NPCInterAct : MonoBehaviour, IInteractableInterface
         }
 
         return true;
+    }
+
+    public void OnFocusEnter()
+    {
+        SetHighlight(true);
+    }
+
+    public void OnFocusExit()
+    {
+        SetHighlight(false);
+    }
+    public void SetHighlight(bool active)
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = active ? highlightSprite : normalSprite;
+
+        if (guideUI != null)
+            guideUI.SetActive(active);
     }
 }
 
