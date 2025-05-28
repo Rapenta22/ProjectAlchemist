@@ -1,9 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\New\\ProjectAlchemist\\",
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\obj\\sortingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|c:\\users\\hp\\desktop\\potionmaker_iren-main - \uBCF5\uC0AC\uBCF8\\projectalchemist\\assets\\scripts\\ui\\potion\\potioncraftui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\potion\\potioncraftui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\assets\\scripts\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\assets\\scripts\\title\\titlesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\title\\titlesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\assets\\scripts\\title\\popup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\title\\popup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\assets\\scripts\\obj\\sortingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\sortingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,20 +30,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\UI\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIManager.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\UI\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIManager.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAAANsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T05:03:41.121Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PotionCraftUI.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\UI\\Potion\\PotionCraftUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Potion\\PotionCraftUI.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\UI\\Potion\\PotionCraftUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Potion\\PotionCraftUI.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAkwHQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T04:53:10.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PopUp.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\Title\\PopUp.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Title\\PopUp.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\Title\\PopUp.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Title\\PopUp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T04:38:05.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TitleSc.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\Title\\TitleSc.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Title\\TitleSc.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\Title\\TitleSc.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Title\\TitleSc.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAAH4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T04:30:11.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SortingManager.cs",
-              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Obj\\SortingManager.cs",
-              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\PotionMaker_Iren-main - \uBCF5\uC0AC\uBCF8\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Obj\\SortingManager.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAYwFIAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T00:33:28.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T00:33:28.854Z"
             }
           ]
         }
