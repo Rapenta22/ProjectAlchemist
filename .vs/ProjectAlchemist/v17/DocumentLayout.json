@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Git\\New\\ProjectAlchemist\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\obj\\sortingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\sortingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SortingManager.cs",
+              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Obj\\SortingManager.cs",
+              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Obj\\SortingManager.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAYwFIAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T00:33:28.854Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

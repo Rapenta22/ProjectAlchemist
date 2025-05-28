@@ -12,7 +12,7 @@ public class EscapeKeyUI : MonoBehaviour
     public Image toTitleImage;
     private float holdDelay = 0.2f;
     private float holdTimer = 0f;
-    public GameObject KeyGuideGameObj; 
+    public GameObject KeyGuideGameObj;
 
     private int selectedIndex = 0;
 
@@ -48,6 +48,7 @@ public class EscapeKeyUI : MonoBehaviour
 
     void Update()
     {
+
         bool isHolding = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
 
         // 단발 입력: GetKeyDown으로 한 번만 반응
@@ -77,7 +78,7 @@ public class EscapeKeyUI : MonoBehaviour
         {
             holdTimer = holdDelay;  // 입력 없으면 초기화
         }
-
+        HandleInput();
         UpdateSelectionVisuals();
         UpdateUI();
     }
