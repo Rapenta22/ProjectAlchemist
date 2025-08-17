@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\Git\\New\\ProjectAlchemist\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\obj\\sortingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\sortingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\sl\\binder\\playerbind_gm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sl\\binder\\playerbind_gm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\title\\titlesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\title\\titlesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\manager\\gmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\gmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\loading\\loadingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loading\\loadingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|d:\\git\\new\\projectalchemist\\assets\\scripts\\map\\sceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\sceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts - \uBCF5\uC0AC\uBCF8\\Controller\\ParentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts - \uBCF5\uC0AC\uBCF8\\Controller\\ParentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +39,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SortingManager.cs",
-              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Obj\\SortingManager.cs",
-              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Obj\\SortingManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Obj\\SortingManager.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAYwFIAAABQAAAAAAAAAA==",
+              "Title": "PlayerBind_GM.cs",
+              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\SL\\Binder\\PlayerBind_GM.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SL\\Binder\\PlayerBind_GM.cs",
+              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\SL\\Binder\\PlayerBind_GM.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SL\\Binder\\PlayerBind_GM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T00:33:28.854Z",
+              "WhenOpened": "2025-08-17T11:04:08.862Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SceneLoader.cs",
+              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Map\\SceneLoader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Map\\SceneLoader.cs",
+              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Map\\SceneLoader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Map\\SceneLoader.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAADgv0oAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T10:46:00.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoadingManager.cs",
+              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Loading\\LoadingManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Loading\\LoadingManager.cs",
+              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Loading\\LoadingManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Loading\\LoadingManager.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwDsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T10:44:57.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TitleSc.cs",
+              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Title\\TitleSc.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Title\\TitleSc.cs",
+              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Title\\TitleSc.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Title\\TitleSc.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAowLsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T10:42:19.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GManager.cs",
+              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Manager\\GManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\GManager.cs",
+              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts\\Manager\\GManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\GManager.cs",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAuwCwCAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T10:35:03.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ParentController.cs",
+              "DocumentMoniker": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts - \uBCF5\uC0AC\uBCF8\\Controller\\ParentController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts - \uBCF5\uC0AC\uBCF8\\Controller\\ParentController.cs",
+              "ToolTip": "D:\\Git\\New\\ProjectAlchemist\\Assets\\Scripts - \uBCF5\uC0AC\uBCF8\\Controller\\ParentController.cs",
+              "RelativeToolTip": "Assets\\Scripts - \uBCF5\uC0AC\uBCF8\\Controller\\ParentController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T08:56:42.706Z"
             }
           ]
         }

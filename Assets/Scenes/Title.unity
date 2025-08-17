@@ -334,6 +334,9 @@ MonoBehaviour:
   m_popup: {fileID: 1578851068}
   m_newGamePopup: {fileID: 1329438489}
   m_quitPopup: {fileID: 91082134}
+  m_continueText: {fileID: 0}
+  m_colorEnabled: {r: 1, g: 1, b: 1, a: 1}
+  m_colorDisabled: {r: 1, g: 1, b: 1, a: 0.4}
   selectedIndex: 0
   m_boxOpenFlag: 0
 --- !u!4 &323534649
@@ -1648,20 +1651,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2005459567089839674, guid: 1acc548d502a47d4e8b321ad1cbce856,
+    - target: {fileID: 1308344700844982936, guid: 1acc548d502a47d4e8b321ad1cbce856,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.5
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2973335194580035385, guid: 1acc548d502a47d4e8b321ad1cbce856,
+    - target: {fileID: 2138250003167456073, guid: 1acc548d502a47d4e8b321ad1cbce856,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2980579407335312574, guid: 1acc548d502a47d4e8b321ad1cbce856,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.5
+      propertyPath: m_PlaybackSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3062108528866999356, guid: 1acc548d502a47d4e8b321ad1cbce856,
         type: 3}
@@ -1717,6 +1715,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324888224491156355, guid: 1acc548d502a47d4e8b321ad1cbce856,
+        type: 3}
+      propertyPath: m_videoPlayer
+      value: 
+      objectReference: {fileID: 1809957481}
+    - target: {fileID: 7984121840694861454, guid: 1acc548d502a47d4e8b321ad1cbce856,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1858,6 +1866,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793573078}
   m_CullTransparentMesh: 1
+--- !u!328 &1809957481 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 2138250003167456073, guid: 1acc548d502a47d4e8b321ad1cbce856,
+    type: 3}
+  m_PrefabInstance: {fileID: 1655550621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1867407139
 GameObject:
   m_ObjectHideFlags: 0
